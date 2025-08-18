@@ -8,6 +8,7 @@ class Conditionals
   AGE = 28
   AUTHENTICATED = false
   STATUS = 0
+  HAS_DRIVER_LICENSE = true
 
   def check_age
     if Conditionals::AGE < 18
@@ -50,6 +51,14 @@ class Conditionals
       puts "Unknown status"
     end
   end
+
+  def drive
+    can_drive and puts 'Drive...'
+  end
+
+  def can_drive
+    Conditionals::AGE >= 18 && Conditionals::HAS_DRIVER_LICENSE
+  end
 end
 
 conditionals = Conditionals.new
@@ -58,3 +67,12 @@ conditionals.check_authentication
 conditionals.check_user
 conditionals.ternary_operator
 conditionals.user_status
+conditionals.drive
+
+# && || vs and or
+
+a = true && false # (true && false)
+b = true and false # (b = true) and false
+
+puts(a) # => false
+puts(b) # => true
