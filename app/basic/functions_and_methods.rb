@@ -33,6 +33,14 @@ end
 puts sum(5)      # => 5
 puts sum(5, 3)   # => 8
 
+# Function with named parameters
+
+def greet(name:, age:)
+  puts "Hello, #{name}! You are #{age} years old."
+end
+
+greet(name: "Alan", age: 28)
+
 # Function return values
 def multiply(a, b)
   a * b # Implicitly return
